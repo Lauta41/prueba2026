@@ -1,0 +1,792 @@
+/* 
+
+.boton-catalogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(450px, 95%);
+    min-height: 20px;
+    padding: 10px;
+    background-color: #ffc20e;
+    color: #000;
+    text-decoration: none;
+    font-size: clamp(5px);
+    text-align: center;
+    transition: background-color 0.3s;
+    border-style: 50px;
+} 
+.slogan{
+    margin: 0;
+    padding: 10;
+    align-self: center;
+    position: relative;
+    top: -20px;
+    width: 50px;
+    font-size: 30px;
+}
+.ubislogan{
+    margin-left: 580px;
+}
+
+
+.logo {
+   
+
+    display: block;
+
+    width: min(900px, 90vw);
+    height: auto;
+    max-height: 65vh;
+
+    object-fit: contain;
+
+    border: none;
+    border-radius: 0;
+
+    margin: 30px auto;
+}
+hasta aca  */
+
+/* 
+.contenido {
+    width: 100%;
+    min-height: 75vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    margin: 0;
+}
+
+.presentacion {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.titulo{
+    color: #ffbd35;
+    display: flex;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: none;
+    text-decoration: underline
+}
+
+
+/* //hasta aca iba el estilo viejo// */ 
+
+
+/* ==========================
+   CONFIGURACIÓN GENERAL
+========================== */
+
+:root {
+    --negro: #080706;
+    --negro-suave: #100d09;
+    --dorado: #d7b36a;
+    --dorado-claro: #f0d69a;
+    --blanco: #f6f0e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+/* ==========================
+   BARRA SUPERIOR
+========================== */
+
+.navbar {
+    height: 130px;
+    width: 100%;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: #080706;
+    border-bottom: 1px solid rgba(215, 179, 106, 0.35);
+    position: relative;
+    z-index: 10;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 220px;
+    height: 115px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(22px, 4vw, 65px);
+}
+
+.nav-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    padding: 12px 0;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.nav-menu a:hover,
+.nav-menu a.activo {
+    color: var(--dorado-claro);
+}
+
+.nav-menu a.activo::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: var(--dorado);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.nav-icons a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icons svg {
+    width: 29px;
+    height: 29px;
+    fill: none;
+    stroke: var(--dorado-claro);
+    stroke-width: 1.5;
+    transition: transform 0.3s;
+}
+
+.nav-icons a:hover svg {
+    transform: scale(1.12);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--dorado-claro);
+    background: transparent;
+    border: 1px solid var(--dorado);
+    padding: 8px 12px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+
+/* ==========================
+   PORTADA PRINCIPAL
+========================== */
+
+.hero {
+    min-height: 770px;
+    height: calc(100svh - 130px);
+    max-height: 950px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /*
+       Colocá la foto de portada en:
+       IMG/fondo-perfumes.jpg
+    */
+
+    background-image: url("IMG/FONDO.PAGINA.PERFUMES.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.42) 45%,
+            rgba(0, 0, 0, 0.25)
+        );
+}
+
+.hero-content {
+    width: 60%;
+    max-width: 800px;
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    transform: translateX(2%);
+}
+
+.hero-logo {
+    display: block;
+    width: min(100%, 590px);
+    max-height: 300px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 14px rgba(0, 0, 0, 0.65))
+    ;
+}
+
+.frase {
+    margin-top: 12px;
+    margin-bottom: 36px;
+    color: #e7d4ad;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(14px, 1.4vw, 21px);
+    letter-spacing: 8px;
+    line-height: 1.8;
+}
+
+.boton-catalogo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    min-width: 300px;
+    padding: 18px 28px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado-claro);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+    transition: all 0.35s ease;
+}
+
+.boton-catalogo span {
+    font-size: 24px;
+}
+
+.boton-catalogo:hover {
+    background: var(--dorado);
+    color: #080706;
+}
+
+
+/* ==========================
+   BENEFICIOS LATERALES
+========================== */
+
+.beneficios {
+    position: absolute;
+    z-index: 2;
+    right: 4.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    border-left: 1px solid rgba(215, 179, 106, 0.45);
+    padding-left: 26px;
+}
+
+.beneficio {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.beneficio-icono {
+    color: var(--dorado-claro);
+    font-size: 30px;
+    min-width: 28px;
+    text-align: center;
+}
+
+.beneficio p {
+    color: #f1e8d7;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+
+/* ==========================
+   UBICACIÓN
+========================== */
+
+.ubicacion {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: rgba(5, 4, 3, 0.85);
+    border-top: 1px solid rgba(215, 179, 106, 0.25);
+}
+
+.ubicacion span {
+    width: 120px;
+    height: 1px;
+    background: var(--dorado);
+    opacity: 0.7;
+}
+
+.ubicacion p {
+    color: var(--dorado-claro);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+}
+
+
+/* ==========================
+   SECCIONES INFERIORES
+========================== */
+
+.seccion {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.catalogo {
+    background:
+        radial-gradient(
+            ellipse at top,
+            #1b1710 0%,
+            #0b0907 60%
+        );
+}
+
+.subtitulo {
+    color: var(--dorado);
+    font-size: 12px;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+}
+
+.seccion h2 {
+    color: var(--dorado-claro);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+.descripcion,
+.nosotros > p:last-child,
+.contacto > p:not(.subtitulo) {
+    color: #c7beb0;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.producto {
+    padding: 16px 16px 28px;
+    background: #11100d;
+    border: 1px solid rgba(215, 179, 106, 0.2);
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+.producto:hover {
+    border-color: var(--dorado);
+    transform: translateY(-5px);
+}
+
+.producto-imagen {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.imagen-1 {
+    background-image:
+        linear-gradient(0deg, #0009, transparent),
+        url(IMG/9PM\ NIGHT\ OUT.jpg);
+
+}
+
+.imagen-2 {
+    background-image:
+        linear-gradient(0deg, #0009, transparent),
+        url(IMG/LIQUID\ BRUN.webp),
+        
+}
+
+.imagen-3 {
+    background-image:
+        linear-gradient(0deg, #0009, transparent),
+        url("IMG/perfume-unisex.jpg");
+}
+
+.producto-imagen span {
+    color: white;
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.producto h3 {
+    color: var(--dorado-claro);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.producto > p {
+    color: #bcb2a3;
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+.boton-secundario {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado-claro);
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.boton-secundario:hover {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+
+/* ==========================
+   NOSOTROS
+========================== */
+
+.nosotros {
+    background: #100d09;
+    border-top: 1px solid #302519;
+    border-bottom: 1px solid #302519;
+}
+
+.nosotros > p:last-child {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* ==========================
+   CONTACTO
+========================== */
+
+.contacto {
+    background: #090807;
+}
+
+.contacto-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.boton-contacto {
+    display: inline-block;
+    padding: 17px 25px;
+    border: 1px solid var(--dorado);
+    color: var(--dorado-claro);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.boton-contacto:hover {
+    background: var(--dorado);
+    color: var(--negro);
+}
+
+
+/* ==========================
+   PIE DE PÁGINA
+========================== */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    background: #050403;
+    border-top: 1px solid rgba(215, 179, 106, 0.3);
+}
+
+footer img {
+    width: 150px;
+    height: 85px;
+    object-fit: contain;
+}
+
+footer > p {
+    color: var(--dorado-claro);
+    font-family: 'Cormorant Garamond', serif;
+    margin: 10px 0;
+}
+
+footer .copyright {
+    color: #8e8578;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    margin-top: 22px;
+}
+
+
+/* ==========================
+   ADAPTACIÓN A CELULARES
+========================== */
+
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 0 4%;
+        gap: 18px;
+    }
+
+    .logo {
+        width: 165px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-menu a {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .beneficios {
+        right: 2%;
+        padding-left: 14px;
+    }
+
+    .beneficio {
+        gap: 8px;
+    }
+
+    .beneficio p {
+        font-size: 11px;
+    }
+
+    .hero-content {
+        width: 65%;
+        margin-right: 80px;
+    }
+
+    .productos {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        height: 90px;
+        padding: 0 18px;
+        gap: 12px;
+    }
+
+    .logo {
+        width: 145px;
+        height: 82px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        background: #080706;
+        border-bottom: 1px solid var(--dorado);
+    }
+
+    .nav-menu.abierto {
+        display: flex;
+    }
+
+    .nav-menu a {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .nav-icons {
+        gap: 12px;
+    }
+
+    .nav-icons svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 760px;
+        max-height: none;
+        background-position: 36% center;
+        align-items: center;
+        padding: 50px 14px 105px;
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.48);
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 8px;
+        margin: 0;
+        transform: none;
+    }
+
+    .hero-logo {
+        width: min(100%, 410px);
+        max-height: 240px;
+    }
+
+    .frase {
+        font-size: 13px;
+        letter-spacing: 3px;
+        margin: 12px 0 28px;
+    }
+
+    .boton-catalogo {
+        min-width: 240px;
+        padding: 15px 20px;
+        font-size: 15px;
+    }
+
+    .beneficios {
+        position: relative;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+        align-self: end;
+        margin-top: 45px;
+        padding-left: 15px;
+        gap: 12px;
+    }
+
+    .beneficio-icono {
+        font-size: 22px;
+    }
+
+    .beneficio p {
+        font-size: 10px;
+    }
+
+    .ubicacion {
+        min-height: 65px;
+        gap: 12px;
+    }
+
+    .ubicacion span {
+        width: 40px;
+    }
+
+    .ubicacion p {
+        font-size: 16px;
+    }
+
+    .seccion {
+        padding: 70px 6%;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 420px;
+        margin: 35px auto 0;
+    }
+
+    .producto-imagen {
+        height: 320px;
+    }
+
+    .contacto-botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 380px) {
+    .logo {
+        width: 115px;
+    }
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+    .nav-icons {
+        gap: 8px;
+    }
+
+    .nav-icons svg {
+        width: 20px;
+    }
+
+    .hero {
+        min-height: 720px;
+    }
+}
+
+
